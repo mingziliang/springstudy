@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <!--    配置数据库连接环境-->
+    <environments default="mysql">
+        <!--定义oracle开发环境-->
+        <environment id="oracle">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.oracle.jdbc.Driver"/>
+                <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+                <property name="username" value="hr"/>
+                <property name="password" value="hr"/>
+            </dataSource>
+        </environment>
+
+        <!--定义mysql开发环境-->
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/2020?characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--引入Mapper.xml-->
+        <package name=""/>
+
+    </mappers>
+
+</configuration>
