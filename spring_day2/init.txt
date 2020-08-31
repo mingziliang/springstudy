@@ -1,0 +1,19 @@
+1.spring框架
+    spring框架 项目管理框架 核心 就是用来管理项目中组件对象的创建 使用 销毁
+2.spring框架第一个环境搭建
+    a)引入依赖
+    b)引入spring.xml
+    c)通过spring管理组件的创建
+    d)启动工厂
+3.spring核心思想
+    IOC&DI
+        IOC inversion of control 控制反转
+         就是将手动通过new关键字创建对象的权力交给spring,由工厂创建对象过程，
+        DI:Dependency Injection 依赖注入
+            Spring工厂不仅要创建对象还要再创建对象同时维护组件和组件的依赖关系‘
+    AOP：面向切面编程
+4.spring中注入
+    SET方式【重点】 构造方法 自动注入
+    SET注入：
+            定义：使用set方法形式
+http://10.249.16.88:8095/webchat/index.html#/login?languageType=1&requestSource=1002&transactionID=1002202007301728099262906&access_token=eyJraWQiOiJkZWZhdWx0LWdyYXZpdGVlLUFNLWtleSIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJ6eHhnX3JvYm90IiwiYXVkIjoienh4Z19yb2JvdCIsImRvbWFpbiI6InJvYm90IiwiaXNzIjoiaHR0cDovLzEwLjI1My4zNC41NDo4MDkyL3JvYm90L29pZGMiLCJleHAiOjE1OTYxMDMwODksImlhdCI6MTU5NjEwMTI4OSwianRpIjoicmlGeUlBWU8wRnlFRml6NkVpU1FYd0YxdGdNIn0.Hvl6YfZSYO7T8zlocogPJOVPIHrpind6CPZvJkJO4xc&userId=befbc669bdff4d3ab5b88a8447779635&channelId=fa001e231e69ea42b5b88a8447779635&nickName=0e87dd00937aee8c&username=0e87dd00937aee8c&attributes=8e1f982bdca623a3
