@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>通过异步形式展示所有人信息</title>
     <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/ajax.js"></script>
     <script>
         $(function () {
             $("#btn").click(function () {
@@ -25,7 +26,7 @@
                         console.log(xhr.responseText);
                         var jsArr = eval("(" + xhr.responseText + ")");
                         console.log(jsArr);
-                        $("ul").empty();
+                        $("ul,hr:gt(0)").remove();
                         $.each(jsArr, function (idx, user) {
                             console.log(user);
                             var ul = $("<ul/>");
@@ -34,7 +35,7 @@
                             var ageLi = $("<li/>").text("age:"+user.age);
                             var birLi = $("<li/>").text("bir:"+user.bir);
                             ul.append(idLi).append(nameLi).append(ageLi).append(birLi);
-                            $("#bd").append(ul);
+                            $("#bd").append(ul).append("<hr/>");
                         });
                     }
                 }

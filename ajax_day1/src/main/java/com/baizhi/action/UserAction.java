@@ -2,18 +2,21 @@ package com.baizhi.action;
 
 import com.alibaba.fastjson.JSONObject;
 import com.baizhi.entity.User;
+import com.baizhi.service.UserService;
+import com.baizhi.service.UserServiceImpl;
 import com.opensymphony.xwork2.Action;
 import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class UserAction      {
     private String username;
     private  String id;
+
+    private UserService userService = new UserServiceImpl();
     /*
         根据一个id查询一个ajax请求处理
      */
@@ -33,13 +36,15 @@ public class UserAction      {
     查询所有用户
      */
     public String findAll() throws IOException{
-        User user1 = new User("1","小陈",23,new Date());
-        User user2 = new User("2","小刘",24,new Date());
-        User user3 = new User("3","小梁",25,new Date());
-        List<User>  users = new ArrayList<>();
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
+//        User user1 = new User("1","小陈",23,new Date());
+//        User user2 = new User("2","小刘",24,new Date());
+//        User user3 = new User("3","小梁",25,new Date());
+//        List<User>  users = new ArrayList<>();
+//        users.add(user1);
+//        users.add(user2);
+//        users.add(user3);
+        List<User> users = userService.findAll();
+
         //处理响应
         String s=JSONObject.toJSONStringWithDateFormat(users, "yyyy-MM-dd");
         HttpServletResponse response = ServletActionContext.getResponse();
