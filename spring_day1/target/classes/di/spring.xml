@@ -3,10 +3,16 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--        管理DAO组件-->
-    <bean class="di.DeptDaoImpl" id="deptDAO"></bean>
-<!--    管理Service组件-->
-    <bean class="di.DeptServiceImpl" id="deptService">
-        <property name="deptDao" ref="deptDAO"></property>
-    </bean>
+    <!--        管理DAO组件-->
+        <bean class="di.DeptDaoImpl" id="deptDAO"></bean>
+    <!--    管理Service组件-->
+        <bean class="di.DeptServiceImpl" id="deptService">
+    <!--        依赖的注入
+        property用来给组件的属性进行赋值操作
+        name    用来指定给组件中那个属性名进行赋值
+        ref     用来指定赋值对象在工厂中唯一标识 bean的 id
+        -->
+            <property name="deptDao" ref="deptDAO"></property>
+
+        </bean>
 </beans>

@@ -1,4 +1,5 @@
 package adi;
 
-public interface StudentService {
+public interface StudentService  {
+ void  save(String name);
 }

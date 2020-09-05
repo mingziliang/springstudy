@@ -13,5 +13,6 @@
         ref     用来指定赋值对象在工厂中唯一标识 bean的 id
         -->
             <property name="deptDao" ref="deptDAO"></property>
+
         </bean>
 </beans>
